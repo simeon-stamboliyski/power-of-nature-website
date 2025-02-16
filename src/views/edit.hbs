@@ -1,0 +1,40 @@
+<main>
+
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+
+    <!-- <div>
+        <div class="errorContainer">
+            <p>Error</p>
+        </div>
+    </div> -->
+
+    <section id="create-container">
+        <div class="create-container-info">
+            <h1>Edit Event</h1>
+            <form method="POST">
+                <label>Name of the Disaster:</label>
+                <input type="text" id="name" name="name" placeholder="..." value="{{disaster.name}}">
+                <label>Type of Disaster:</label>
+                <select id="type" name="type">
+                    <option value="Wildfire" {{#if (eq disaster.type "Wildfire")}}selected{{/if}}>Wildfire</option>
+                    <option value="Flood" {{#if (eq disaster.type "Flood")}}selected{{/if}}>Flood</option>
+                    <option value="Earthquake" {{#if (eq disaster.type "Earthquake")}}selected{{/if}}>Earthquake</option>
+                    <option value="Hurricane" {{#if (eq disaster.type "Hurricane")}}selected{{/if}}>Hurricane</option>
+                    <option value="Drought" {{#if (eq disaster.type "Drought")}}selected{{/if}}>Drought</option>
+                    <option value="Tsunami" {{#if (eq disaster.type "Tsunami")}}selected{{/if}}>Tsunami</option>
+                    <option value="Other" {{#if (eq disaster.type "Other")}}selected{{/if}}>Other</option>
+                </select>
+                <label>Year of the Event:</label>
+                <input type="number" id="elevations" name="year" placeholder="..." value="{{disaster.year}}">
+                <label>Location:</label>
+                <input type="text" id="location" name="location" placeholder="..." value="{{disaster.location}}">
+                <label>Image:</label>
+                <input type="text" id="image" name="imageUrl" placeholder="http://..." value="{{disaster.imageUrl}}">
+                <label>Description:</label>
+                <textarea id="description" name="description" placeholder="...">{{disaster.description}}</textarea>
+                <input type="submit" id="btn" value="Submit"></input>
+            </form>
+        </div>
+    </section>
+</main>
